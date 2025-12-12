@@ -1,42 +1,206 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+:root {
+  --primary-color: #4c84ff;
+  --secondary-color: #6c757d;
+  --background-color: #f0f2f5;
+  --card-background: #ffffff;
+  --text-color: #343a40;
+  --border-radius: 12px;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+  box-sizing: border-box;
 }
 
 .card {
-  padding: 2em;
+  background-color: var(--card-background);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
-.read-the-docs {
-  color: #888;
+h1 {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.input-group label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin-top: 2.5rem;
+  border-radius: 50px; /* Pill-shaped button */
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 15px rgba(76, 132, 255, 0.4);
+}
+
+button:hover {
+  background-color: #3a68c0;
+  transform: translateY(-2px);
+}
+.secondary-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin-top: 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.secondary-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.results-container {
+  background-color: #e9f0ff;
+  padding: 2rem;
+  margin-top: 2.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #c8d9ff;
+}
+
+.results-container h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #34486d;
+}
+
+.results-container p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+.report-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.report-item {
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border: 1px solid #e0e6f3;
+}
+
+.report-item h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+.report-item p {
+  margin-bottom: 0;
+}
+
+.score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.risk-level {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Style for different risk levels */
+.risk-level.Low {
+  color: #28a745;
+}
+
+.risk-level.Medium {
+  color: #ffc107;
+}
+
+.risk-level.High {
+  color: #dc3545;
+}
+.chart-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.report-symptom-container {
+  margin-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 2rem;
+}
+
+.symptom-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.symptom-input-group input {
+  flex-grow: 1;
+}
+
+.small-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+.report-status {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #28a745;
 }
